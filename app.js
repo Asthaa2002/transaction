@@ -20,6 +20,10 @@ app.use(transactionRoutes);
 app.use(authRoutes)
 app.use(accountRoutes)
 
+app.use("/", (req, res) => {
+  res.send("WORKING")
+})
+
 mongoose
   .connect(MONGOD_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
